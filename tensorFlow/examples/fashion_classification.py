@@ -8,6 +8,7 @@ from tensorflow import keras
 # helper libraries
 import numpy as np
 import matplotlib.pyplot as plt
+from hilbertcurve.hilbertcurve import HilbertCurve
 
 # names of classes of fashion mnist database
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
@@ -20,6 +21,7 @@ fashion_mnist = keras.datasets.fashion_mnist
 # scale images from 0 to 1
 train_images = train_images / 255
 test_images = test_images / 255
+
 
 # display first 25 images in the fashion_mnist database
 '''
@@ -47,6 +49,8 @@ model.fit(train_images, train_labels, epochs=5)
 
 # now that the model is trained, can make predictions about new images
 predictions = model.predict(test_images)
+
+print(model.summary())
 
 # print predictions
 i = 2 # test image number i
